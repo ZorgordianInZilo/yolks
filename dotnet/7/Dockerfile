@@ -14,13 +14,13 @@ RUN         apt update -y \
             && ln -s /usr/share/dotnet /usr/bin/dotnet
 
 # Required to make SkiaSharp 2.80.1 work. If use 2.80.3 SkiaSharp.NativeAssets.Linux.NoDependencies it is not required.
-RUN 		apk add --no-cache fontconfig
+RUN 		apt install --no-cache fontconfig
 
-RUN 		apk add --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
+RUN 		apt install --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
 # For debug purposes.
-RUN 		apk add --no-cache bash
+RUN 		apt install --no-cache bash
 # Add the missed ld-linux-x86-64.so.2 dependency.
-RUN 		apk add --no-cache gcompat
+RUN 		apt install --no-cache gcompat
 
 USER        container
 ENV         USER=container HOME=/home/container
