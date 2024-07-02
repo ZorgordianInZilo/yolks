@@ -5,7 +5,7 @@ LABEL       author="Torsten Widmann" maintainer="info@goover.de"
 ENV         DEBIAN_FRONTEND noninteractive
 
 # Required to make SkiaSharp 2.80.1 work. If use 2.80.3 SkiaSharp.NativeAssets.Linux.NoDependencies it is not required.
-#RUN apk add --no-cache fontconfig
+RUN 		apk add --no-cache fontconfig
 
 RUN 		apk add --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
 # For debug purposes.
