@@ -14,7 +14,7 @@ RUN         wget https://dot.net/v1/dotnet-install.sh \
 			&& ./dotnet-install.sh -i /usr/share -v $D_V \
             && ln -s /usr/share/dotnet /usr/bin/dotnet
 
-RUN         apt-get install -y ca-certificates libc6 libgcc-s1 libgssapi-krb5-2 libicu70 liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g
+RUN         apt install -y ca-certificates libc6 libgcc-s1 libgssapi-krb5-2 libicu70 liblttng-ust1 libssl3 libstdc++6 libunwind8 zlib1g
 
 # Required to make SkiaSharp 2.80.1 work. If use 2.80.3 SkiaSharp.NativeAssets.Linux.NoDependencies it is not required.
 RUN 		apt install --no-cache fontconfig
