@@ -7,20 +7,8 @@ ENV         DEBIAN_FRONTEND noninteractive
 RUN         apt update -y \
             && apt upgrade -y \
             && apt install -y apt-transport-https wget curl iproute2 libgdiplus tini libfontconfig1 libsm6 libice6\
-            && wget https://dot.net/v1/dotnet-install.sh \
-            && D_V="$(curl -sSL https://dotnet.microsoft.com/en-us/download/dotnet/7.0 | grep -i  '<h3 id="sdk-7.*">SDK 7.*.*</h3>'  | head -1 | awk -F\" '{print $3}' | awk '{print $2;}' | sed 's/<\/h3>//g')" \ 
-            && chmod +x dotnet-install.sh \
-			&& ./dotnet-install.sh -i /usr/share -v $D_V \
-            && ln -s /usr/share/dotnet /usr/bin/dotnet
+            && apt-get install -y dotnet-sdk-7.0
 
-# Required to make SkiaSharp 2.80.1 work. If use 2.80.3 SkiaSharp.NativeAssets.Linux.NoDependencies it is not required.
-RUN 		apt install --no-cache fontconfig
-
-RUN 		apt install --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
-# For debug purposes.
-RUN 		apt install --no-cache bash
-# Add the missed ld-linux-x86-64.so.2 dependency.
-RUN 		apt install --no-cache gcompat
 
 USER        container
 ENV         USER=container HOME=/home/container
