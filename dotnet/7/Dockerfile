@@ -5,7 +5,7 @@ LABEL       author="Torsten Widmann" maintainer="info@goover.de"
 ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
-            && apt install -y apt-transport-https
+            && apt install -y apt-transport-https ca-certificates
 
 RUN         apt upgrade -y \
             && apt install -y wget curl iproute2 libgdiplus tini libfontconfig1 libsm6 libice6
