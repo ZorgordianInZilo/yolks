@@ -4,10 +4,10 @@ LABEL       author="Torsten Widmann" maintainer="info@goover.de"
 
 ENV         DEBIAN_FRONTEND noninteractive
 
-RUN         apt install -y apt-transport-https
-
 RUN         apt update -y \
-            && apt upgrade -y \
+            apt install -y apt-transport-https
+
+RUN         apt upgrade -y \
             && apt install -y wget curl iproute2 libgdiplus tini libfontconfig1 libsm6 libice6
 
 RUN         wget https://dot.net/v1/dotnet-install.sh \
