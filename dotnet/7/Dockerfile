@@ -21,7 +21,7 @@ RUN         wget https://dot.net/v1/dotnet-install.sh \
 # Required to make SkiaSharp 2.80.1 work. If use 2.80.3 SkiaSharp.NativeAssets.Linux.NoDependencies it is not required.
 #RUN 		apt install --no-cache fontconfig
 
-RUN 		apt install --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
+#RUN 		apt install --no-cache icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
 
 # Add the missed ld-linux-x86-64.so.2 dependency.
 RUN 		apt install --no-cache gcompat
