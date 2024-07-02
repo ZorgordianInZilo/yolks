@@ -47,4 +47,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/zorgordianinxilo/yolks:dotnet_${{ matrix.tag }}
+            ghcr.io/zorgordianinzilo/yolks:dotnet_${{ matrix.tag }}
