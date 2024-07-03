@@ -6,7 +6,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
             && apt upgrade -y \
-			&& && apt install -y apt-transport-https wget curl iproute2 libgdiplus tini \
+            && && apt install -y apt-transport-https wget curl iproute2 libgdiplus tini \
             && apt install -y dotnet-runtime-7.0
 
 USER        container
