@@ -6,7 +6,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
             && apt upgrade -y \
-            && apt install -y aspnetcore-runtime-7.0
+            && apt install -y aspnetcore-runtime-8.0
 
 USER        container
 ENV         USER=container HOME=/home/container
