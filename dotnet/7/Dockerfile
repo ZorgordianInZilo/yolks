@@ -22,7 +22,8 @@ RUN			apt install -y dirmngr ca-certificates gnupg \
             && echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-buster main" | tee /etc/apt/sources.list.d/mono-official-stable.list \
             && apt update \
 			&& apt install -y mono-complete
-
+RUN         apt install libice6
+RUN         apt install libsm6
 RUN         apt install -y libfontconfig1
 
 USER        container
