@@ -17,14 +17,7 @@ RUN         apt update -y \
 			&& ./dotnet-install.sh -i /usr/share -v $D_V \
             && ln -s /usr/share/dotnet /usr/bin/dotnet
 			
-RUN			apt install -y dirmngr ca-certificates gnupg \
-            && gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
-            && echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-buster main" | tee /etc/apt/sources.list.d/mono-official-stable.list \
-            && apt update \
-			&& apt install -y mono-complete
-RUN         apt install libice6
-RUN         apt install libsm6
-RUN         apt install -y libfontconfig1
+RUN			apt install -y --no-cache icu-libs fontconfig ttf-dejavu
 
 USER        container
 ENV         USER=container HOME=/home/container
