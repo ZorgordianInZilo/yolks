@@ -23,6 +23,8 @@ RUN			apt install -y dirmngr ca-certificates gnupg \
             && apt update \
 			&& apt install -y mono-complete
 
+RUN         apt install -y libfontconfig1
+
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
