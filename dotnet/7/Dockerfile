@@ -17,7 +17,7 @@ RUN         apt update -y \
 			&& ./dotnet-install.sh -i /usr/share -v $D_V \
             && ln -s /usr/share/dotnet /usr/bin/dotnet
 			
-RUN			apt install -y --no-cache icu-libs fontconfig ttf-dejavu
+RUN			apt install -y icu-libs libfontconfig1 ttf-dejavu
 
 USER        container
 ENV         USER=container HOME=/home/container
